@@ -1,14 +1,175 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Quiz Mania</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
-<body>
-    
-</body>
-</html>></html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizMania - Online Quiz Application</title>
+    <meta
+      name="description"
+      content="Test your knowledge with QuizMania - Interactive quiz app with timer and scoring"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Welcome Screen -->
+      <div id="welcome-screen" class="screen active">
+        <div class="container">
+          <div class="welcome-content">
+            <!-- Logo -->
+            <div class="logo">
+              <h1>
+                Welcome to <span class="brand-primary">QUIZ</span
+                ><span class="brand-secondary">Mania</span>
+              </h1>
+            </div>
+
+            <!-- Instructions -->
+            <div class="instructions">
+              <p>Please read all the rules about this quiz before you start.</p>
+              <button class="quiz-rules-btn">Quiz rules</button>
+            </div>
+
+            <!-- Form -->
+            <div class="form-card">
+              <div class="form-group">
+                <label for="playerName">Full name</label>
+                <input
+                  type="text"
+                  id="playerName"
+                  placeholder="Enter your full name"
+                />
+              </div>
+
+              <div class="form-group">
+                <p class="category-label">Please select topic to continue</p>
+                <div class="category-grid" id="categoryGrid">
+                  <!-- Categories will be populated by JavaScript -->
+                </div>
+              </div>
+
+              <button
+                id="startQuizBtn"
+                class="btn btn-primary btn-large"
+                disabled
+              >
+                Start Quiz
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz Screen -->
+      <div id="quiz-screen" class="screen">
+        <!-- Header -->
+        <div class="quiz-header">
+          <div class="quiz-logo">
+            <h2>
+              <span class="brand-primary">QUIZ</span
+              ><span class="brand-secondary">Mania</span>
+            </h2>
+          </div>
+          <div class="quiz-header-right">
+            <span id="playerNameDisplay" class="player-name"></span>
+            <button id="exitQuizBtn" class="btn btn-outline btn-small">
+              <span class="icon">✕</span>
+              Exit Quiz
+            </button>
+          </div>
+        </div>
+
+        <!-- Progress and Timer -->
+        <div class="quiz-progress">
+          <div class="progress-info">
+            <span id="questionCounter">1 /10</span>
+            <span id="timer" class="timer">0:10</span>
+          </div>
+          <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- Question -->
+        <div class="quiz-content">
+          <div class="question-card">
+            <div class="question-text">
+              <h3 id="questionText">Loading question...</h3>
+            </div>
+
+            <div class="options-grid" id="optionsGrid">
+              <!-- Options will be populated by JavaScript -->
+            </div>
+
+            <div class="question-actions">
+              <button id="nextBtn" class="btn btn-primary" disabled>
+                Next
+              </button>
+              <button id="skipBtn" class="btn btn-outline">
+                Skip this question
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Screen -->
+      <div id="results-screen" class="screen">
+        <div class="container">
+          <div class="results-content">
+            <!-- Success Icon -->
+            <div class="success-icon">
+              <div class="icon-circle">
+                <span class="checkmark">✓</span>
+              </div>
+            </div>
+
+            <!-- Header -->
+            <div class="results-header">
+              <h1>CONGRATULATION</h1>
+              <p>You successfully completed the Quiz and holds</p>
+            </div>
+
+            <!-- Score -->
+            <div class="score-section">
+              <div id="finalScore" class="final-score">0%</div>
+              <p id="performanceMessage" class="performance-message">
+                Keep practicing!
+              </p>
+            </div>
+
+            <!-- Performance Details -->
+            <div class="performance-details">
+              <h3 id="totalQuestionsText">Out of 10 questions</h3>
+              <div class="stats-grid">
+                <div class="stat-item stat-correct">
+                  <span id="correctCount">0</span> Correct
+                </div>
+                <div class="stat-item stat-incorrect">
+                  <span id="incorrectCount">0</span> Incorrect
+                </div>
+                <div class="stat-item stat-unanswered">
+                  <span id="unansweredCount">0</span> Not answered
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Button -->
+            <button id="retakeQuizBtn" class="btn btn-primary btn-large">
+              Retake Quiz
+            </button>
+
+            <!-- Footer -->
+            <div class="results-footer">
+              <p>KEEP <span class="brand-primary">PRACTICING!</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="quizData.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

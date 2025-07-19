@@ -1,0 +1,25 @@
+{
+  "name": "online-quiz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "quizData.js",
+  "scripts": {
+    "start": "http-server -p 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamjv8/online-quiz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamjv8/online-quiz/issues"
+  },
+  "homepage": "https://github.com/iamjv8/online-quiz#readme",
+  "type": "module",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
